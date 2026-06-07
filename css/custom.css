@@ -104,45 +104,34 @@
   background-attachment: fixed !important;
 }
 
-/* 彻底隐藏网页右侧的系统垂直滚动条（保留滚轮滚动功能） */
+/* ==========================================
+   网页滚动条完美隐藏（完全清除冲突）
+   ========================================== */
+/* 彻底隐藏 Webkit 内核浏览器（Edge, Chrome, Safari）的滚动条 */
 ::-webkit-scrollbar {
   width: 0 !important;
   height: 0 !important;
   display: none !important;
 }
 
-/* 兼容其他浏览器的隐藏滚动条样式 */
+/* 彻底隐藏其它内核浏览器（Firefox, IE）的滚动条 */
 html {
-  -ms-overflow-style: none;
-  /* IE And Edge */
-  scrollbar-width: none;
+  -ms-overflow-style: none !important;
+  /* IE And Edge Legacy */
+  scrollbar-width: none !important;
   /* Firefox */
+  overflow-y: scroll;
+  /* 保持页面可滚动 */
 }
 
-/* 滚动条轨道毛玻璃 */
-::-webkit-scrollbar-track {
-  background-color: transparent;
-}
 
-/* 滚动滑块：软糯樱粉色，带圆角 */
-::-webkit-scrollbar-thumb {
-  background-color: #ff8fab !important;
-  background-image: linear-gradient(180deg, #ff8fab 0%, #fb6f92 100%) !important;
-  border-radius: 4px;
-}
-
-/* 悬停滑块颜色加深 */
-::-webkit-scrollbar-thumb:hover {
-  background-color: #fb6f92 !important;
-}
-
-/* 自定义二次元主题光标 */
-/* 全局普通指针替换为可爱星星/猫爪 */
+/* ==========================================
+   网页导航光标（保留原样）
+   ========================================== */
 body {
   cursor: url('https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/cursor/normal.cur'), default !important;
 }
 
-/* 悬停在链接、按钮或可交互卡片上时，替换为点击态指针 */
 a,
 button,
 .card-widget,
@@ -152,14 +141,45 @@ button,
   cursor: url('https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/cursor/ayuda.cur'), pointer !important;
 }
 
-/* 顶部阅读进度条升级 - Summer Pockets 蔚蓝渐变 */
+
+/* ==========================================
+   顶部阅读进度条 - Summer Pockets 蔚蓝渐变
+   ========================================== */
 #scroll-percent {
   background: linear-gradient(to right, #1ea7e1 0%, #00d2ff 100%) !important;
   height: 3px !important;
   box-shadow: 0 0 8px #1ea7e1 !important;
 }
 
-/* Banner 底部动态海浪动效 - 仅首页 */
+
+#page-header {
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  min-height: 500px !important;
+}
+
+/* 1. 首页大图：只要背景路径包含 'sprb-top' 就锁死位置 */
+#page-header[style*="sprb-top"] {
+  background-position: center 25% !important;
+  /* 如果觉得太靠上或靠下，可以微调这个百分比 */
+}
+
+/* 2. 归档页大图：只要背景路径包含 'sprb-archive2' 就锁死位置 */
+#page-header[style*="sprb-archive2"] {
+  background-position: center 10% !important;
+  /* 调整这个百分比直到露出老婆们完美的脸 */
+}
+
+
+/* ==========================================
+   文字与动效增强
+   ========================================== */
+#page-header #site-title,
+#page-header #site-subtitle,
+#page-header #post-info {
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6) !important;
+}
+
 #page-header.full_page {
   position: relative;
   overflow: hidden;
@@ -194,28 +214,7 @@ button,
   }
 }
 
-/* 横幅图片完整显示，避免遮挡 */
-#page-header {
-  background-size: cover !important;
-  background-repeat: no-repeat !important;
-  background-position: center top !important;
-
-  min-height: 500px !important;
-}
-
-#page-header[style*="sprb-top.jpg"] {
-  background-size: cover !important;
-  background-position: center 25% !important;
-}
-
-#page-header[style*="sprb-archive2.jpg"] {
-  background-size: cover !important;
-  background-position: center 10% !important;
-}
-
-/* 增强 Banner 上文字的视觉辨识度 */
-#page-header #site-title,
-#page-header #site-subtitle,
-#page-header #post-info {
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6) !important;
+#page-header:before {
+  background-color: transparent !important;
+  /* 强制遮罩背景变全透明 */
 }
