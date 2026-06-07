@@ -60,31 +60,45 @@
   box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.65) !important;
 }
 
-/* 页脚半透明 */
-#footer,
-#footer a {
-  color: #1c5270 !important;
-  /* 改为清晰的深海蓝色，完美契合鸟白岛夏日风格 */
-  transition: color 0.2s ease-in-out !important;
+#footer {
+  background: rgba(30, 167, 225, 0.65) !important;
+  backdrop-filter: blur(12px) saturate(130%) !important;
+  -webkit-backdrop-filter: blur(12px) saturate(130%) !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.4) !important;
+  /* 稍微加亮一点玻璃边缘线，更有层次 */
 }
 
-/* 浅色模式下鼠标悬停在链接上的效果 */
+/* 统一页脚文字与链接为纯白，并补上微弱的文字阴影增强可读性 */
+#footer,
+#footer .footer-wrap,
+#footer a {
+  color: #ffffff !important;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.15) !important;
+  transition: all 0.2s ease-in-out !important;
+}
+
+/* 鼠标悬停在页脚链接上时，切出樱粉色并带下划线 */
 #footer a:hover {
   color: #fb6f92 !important;
-  /* 悬停时变成软糯樱粉色，呼应你的自定义滚动条 */
+  text-decoration: underline !important;
 }
 
-/* 2. 暗黑模式下的页脚文字与链接 */
+/* 暗黑模式下的页脚自适应 */
+[data-theme="dark"] #footer {
+  background: rgba(18, 12, 24, 0.8) !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
 [data-theme="dark"] #footer,
 [data-theme="dark"] #footer a {
   color: rgba(255, 255, 255, 0.6) !important;
-  /* 暗黑模式下由于背景变黑，文字需要变回浅色 */
+  text-shadow: none !important;
 }
 
-/* 暗黑模式下鼠标悬停的效果 */
 [data-theme="dark"] #footer a:hover {
   color: #ff8fab !important;
 }
+
 
 /* 导航栏毛玻璃 */
 #page-header.nav-fixed #nav {
@@ -104,10 +118,6 @@
   background-attachment: fixed !important;
 }
 
-/* ==========================================
-   网页滚动条完美隐藏（完全清除冲突）
-   ========================================== */
-/* 彻底隐藏 Webkit 内核浏览器（Edge, Chrome, Safari）的滚动条 */
 ::-webkit-scrollbar {
   width: 0 !important;
   height: 0 !important;
@@ -124,10 +134,6 @@ html {
   /* 保持页面可滚动 */
 }
 
-
-/* ==========================================
-   网页导航光标（保留原样）
-   ========================================== */
 body {
   cursor: url('https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/cursor/normal.cur'), default !important;
 }
@@ -141,10 +147,6 @@ button,
   cursor: url('https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/cursor/ayuda.cur'), pointer !important;
 }
 
-
-/* ==========================================
-   顶部阅读进度条 - Summer Pockets 蔚蓝渐变
-   ========================================== */
 #scroll-percent {
   background: linear-gradient(to right, #1ea7e1 0%, #00d2ff 100%) !important;
   height: 3px !important;
@@ -158,22 +160,16 @@ button,
   min-height: 500px !important;
 }
 
-/* 1. 首页大图：只要背景路径包含 'sprb-top' 就锁死位置 */
 #page-header[style*="sprb-top"] {
   background-position: center 25% !important;
   /* 如果觉得太靠上或靠下，可以微调这个百分比 */
 }
 
-/* 2. 归档页大图：只要背景路径包含 'sprb-archive2' 就锁死位置 */
 #page-header[style*="sprb-archive2"] {
   background-position: center 10% !important;
   /* 调整这个百分比直到露出老婆们完美的脸 */
 }
 
-
-/* ==========================================
-   文字与动效增强
-   ========================================== */
 #page-header #site-title,
 #page-header #site-subtitle,
 #page-header #post-info {
@@ -214,7 +210,29 @@ button,
   }
 }
 
-#page-header:before {
-  background-color: transparent !important;
-  /* 强制遮罩背景变全透明 */
+#page-header[style*="sprb-top"]:before,
+#page-header[style*="sprb-archive2"]:before {
+  background: linear-gradient(to bottom,
+      rgba(0, 0, 0, 0.3) 0%,
+      /* 顶部导航栏处：30% 的极淡阴影，看清白色菜单 */
+      transparent 25%,
+      /* 往下过渡：迅速变全透明，完全不遮挡角色 */
+      transparent 60%,
+      /* 中间大面积：保持纯净通透 */
+      rgba(0, 0, 0, 0.45) 100%
+      /* 底部标题处：45% 的阴影，让 Hello World 标题史诗级清晰 */
+    ) !important;
+}
+
+#page-header {
+  box-shadow: 0 8px 24px rgba(30, 167, 225, 0.25) !important;
+}
+
+#aside-content .card-info .avatar-img {
+  animation: none !important;
+  /* 强行关掉可能存在的无限循环自动旋转动画 */
+  transform: none !important;
+  /* 强行关掉主题自带的鼠标悬停旋转 360° 效果 */
+  transition: none !important;
+  /* 移除所有动画过渡，让老婆/自己的头像静止如画 */
 }
