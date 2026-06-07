@@ -5,8 +5,8 @@
 
 /* 自定义全局毛玻璃卡片 - Summer Pockets 冰感海水蓝 */
 #aside-content .card-widget,
-#recent-posts > .recent-post-item,
-.layout > div:first-child:not(.aside-content),
+#recent-posts>.recent-post-item,
+.layout>div:first-child:not(.aside-content),
 #post,
 .category-content,
 .tag-cloud-list,
@@ -16,10 +16,10 @@
   background: rgba(244, 249, 255, 0.75) !important;
   backdrop-filter: blur(16px) saturate(130%) !important;
   -webkit-backdrop-filter: blur(16px) saturate(130%) !important;
-  
+
   /* 玻璃边缘质感 */
   border: 1px solid rgba(255, 255, 255, 0.6) !important;
-  
+
   /* 蔚蓝色投影 */
   box-shadow: 0 8px 32px 0 rgba(30, 167, 225, 0.08) !important;
   border-radius: 12px !important;
@@ -28,14 +28,15 @@
 
 /* 暗黑模式下的“赛博星曜”玻璃态 */
 [data-theme="dark"] #aside-content .card-widget,
-[data-theme="dark"] #recent-posts > .recent-post-item,
-[data-theme="dark"] .layout > div:first-child:not(.aside-content),
+[data-theme="dark"] #recent-posts>.recent-post-item,
+[data-theme="dark"] .layout>div:first-child:not(.aside-content),
 [data-theme="dark"] #post,
 [data-theme="dark"] .category-content,
 [data-theme="dark"] .tag-cloud-list,
 [data-theme="dark"] .flink-list,
 [data-theme="dark"] #archive {
-  background: rgba(27, 18, 36, 0.7) !important; /* 暗夜紫透光 */
+  background: rgba(27, 18, 36, 0.7) !important;
+  /* 暗夜紫透光 */
   backdrop-filter: blur(16px) saturate(140%) !important;
   -webkit-backdrop-filter: blur(16px) saturate(140%) !important;
   border: 1px solid rgba(255, 255, 255, 0.08) !important;
@@ -44,28 +45,45 @@
 
 /* 卡片浮动弹性动效 */
 #aside-content .card-widget:hover,
-#recent-posts > .recent-post-item:hover,
-.layout > div:first-child:not(.aside-content):hover {
+#recent-posts>.recent-post-item:hover,
+.layout>div:first-child:not(.aside-content):hover {
   transform: translateY(-6px) scale(1.005) !important;
   box-shadow: 0 16px 40px 0 rgba(255, 143, 171, 0.25) !important;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important; /* 弹性贝塞尔曲线 */
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+  /* 弹性贝塞尔曲线 */
 }
 
 [data-theme="dark"] #aside-content .card-widget:hover,
-[data-theme="dark"] #recent-posts > .recent-post-item:hover,
-[data-theme="dark"] .layout > div:first-child:not(.aside-content):hover {
+[data-theme="dark"] #recent-posts>.recent-post-item:hover,
+[data-theme="dark"] .layout>div:first-child:not(.aside-content):hover {
   border: 1px solid rgba(255, 143, 171, 0.2);
   box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.65) !important;
 }
 
 /* 页脚半透明 */
-#footer {
-  background: rgba(255, 255, 255, 0.15) !important;
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
+#footer,
+#footer a {
+  color: #1c5270 !important;
+  /* 改为清晰的深海蓝色，完美契合鸟白岛夏日风格 */
+  transition: color 0.2s ease-in-out !important;
 }
-[data-theme="dark"] #footer {
-  background: rgba(0, 0, 0, 0.35) !important;
+
+/* 浅色模式下鼠标悬停在链接上的效果 */
+#footer a:hover {
+  color: #fb6f92 !important;
+  /* 悬停时变成软糯樱粉色，呼应你的自定义滚动条 */
+}
+
+/* 2. 暗黑模式下的页脚文字与链接 */
+[data-theme="dark"] #footer,
+[data-theme="dark"] #footer a {
+  color: rgba(255, 255, 255, 0.6) !important;
+  /* 暗黑模式下由于背景变黑，文字需要变回浅色 */
+}
+
+/* 暗黑模式下鼠标悬停的效果 */
+[data-theme="dark"] #footer a:hover {
+  color: #ff8fab !important;
 }
 
 /* 导航栏毛玻璃 */
@@ -75,6 +93,7 @@
   -webkit-backdrop-filter: blur(10px);
   box-shadow: 0 2px 12px 0 rgba(255, 143, 171, 0.15) !important;
 }
+
 [data-theme="dark"] #page-header.nav-fixed #nav {
   background: rgba(20, 20, 20, 0.75) !important;
   box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.4) !important;
@@ -85,12 +104,19 @@
   background-attachment: fixed !important;
 }
 
-/* 自定义粉色二次元滚动条 */
-/* 滚动条整体粗细与背景 */
+/* 彻底隐藏网页右侧的系统垂直滚动条（保留滚轮滚动功能） */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-  background-color: rgba(255, 255, 255, 0.1);
+  width: 0 !important;
+  height: 0 !important;
+  display: none !important;
+}
+
+/* 兼容其他浏览器的隐藏滚动条样式 */
+html {
+  -ms-overflow-style: none;
+  /* IE And Edge */
+  scrollbar-width: none;
+  /* Firefox */
 }
 
 /* 滚动条轨道毛玻璃 */
@@ -117,9 +143,9 @@ body {
 }
 
 /* 悬停在链接、按钮或可交互卡片上时，替换为点击态指针 */
-a, 
-button, 
-.card-widget, 
+a,
+button,
+.card-widget,
 .recent-post-item,
 .toggle-menu,
 #to_top {
@@ -133,14 +159,14 @@ button,
   box-shadow: 0 0 8px #1ea7e1 !important;
 }
 
-/* Banner 底部动态海浪动效 */
-#index-banner {
+/* Banner 底部动态海浪动效 - 仅首页 */
+#page-header.full_page {
   position: relative;
   overflow: hidden;
 }
 
-#index-banner::before,
-#index-banner::after {
+#page-header.full_page::before,
+#page-header.full_page::after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -152,13 +178,44 @@ button,
   animation: wave 8s linear infinite;
 }
 
-#index-banner::after {
+#page-header.full_page::after {
   fill-opacity: 0.5;
   animation: wave 12s linear infinite reverse;
   height: 80px;
 }
 
 @keyframes wave {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* 横幅图片完整显示，避免遮挡 */
+#page-header {
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center top !important;
+
+  min-height: 500px !important;
+}
+
+#page-header[style*="sprb-top.jpg"] {
+  background-size: cover !important;
+  background-position: center 25% !important;
+}
+
+#page-header[style*="sprb-archive2.jpg"] {
+  background-size: cover !important;
+  background-position: center 10% !important;
+}
+
+/* 增强 Banner 上文字的视觉辨识度 */
+#page-header #site-title,
+#page-header #site-subtitle,
+#page-header #post-info {
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6) !important;
 }
