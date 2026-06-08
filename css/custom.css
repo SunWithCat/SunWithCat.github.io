@@ -259,3 +259,115 @@ button,
   opacity: 0.6;
   /* 让行号稍微淡一点，不抢代码的风头 */
 }
+
+/* ==========================================
+   Summer Pockets V2 视觉升级：向日葵与海风
+   ========================================== */
+
+/* 双色渐变过渡调优 */
+#aside-content .card-info .author-info-name:hover,
+.article-title:hover {
+  background: linear-gradient(to right, #1ea7e1 0%, #ffd166 100%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.4s ease-in-out;
+}
+
+/* 按钮与链接悬停色转换为向日葵金黄 */
+#aside-content .card-info .author-info-social-icons a:hover {
+  color: #ffd166 !important;
+  text-shadow: 0 0 8px rgba(255, 209, 102, 0.6) !important;
+}
+
+/* 卡片扫光特效 */
+#aside-content .card-widget,
+#recent-posts>.recent-post-item,
+#post,
+#archive {
+  position: relative;
+  overflow: hidden;
+}
+
+#aside-content .card-widget::before,
+#recent-posts>.recent-post-item::before,
+#post::before,
+#archive::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0) 100%);
+  transform: skewX(-25deg);
+  transition: none;
+  pointer-events: none;
+}
+
+#aside-content .card-widget:hover::before,
+#recent-posts>.recent-post-item:hover::before,
+#post:hover::before,
+#archive:hover::before {
+  left: 125%;
+  transition: all 0.75s ease-in-out;
+}
+
+/* 文章详情页大标题前的纸飞机 */
+h1.post-title::before {
+  content: '✈️';
+  margin-right: 10px;
+  display: inline-block;
+  color: #1ea7e1;
+  transition: transform 0.5s ease-out;
+}
+
+h1.post-title:hover::before {
+  transform: translate(10px, -5px) rotate(15deg);
+}
+
+@keyframes butterfly-flap {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+
+  100% {
+    transform: scale(1.15) rotate(10deg);
+  }
+}
+
+/* 海洋渐变波纹引用块 */
+#article-container blockquote {
+  border-left: 4px solid #1ea7e1 !important;
+  background: rgba(224, 242, 254, 0.25) !important;
+  border-radius: 4px 12px 12px 4px;
+  padding: 15px 20px !important;
+  color: #27272a !important;
+  font-style: italic;
+  position: relative;
+}
+
+#article-container blockquote::after {
+  content: '"';
+  font-family: Georgia, serif;
+  font-size: 50px;
+  color: rgba(30, 167, 225, 0.15);
+  position: absolute;
+  right: 15px;
+  bottom: -10px;
+  line-height: 1;
+}
+
+/* 果冻动效泡泡标签 */
+.tag-cloud-list a,
+.article-meta__tags {
+  display: inline-block;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.tag-cloud-list a:hover,
+.article-meta__tags:hover {
+  transform: scale(1.1) rotate(2deg);
+  background: linear-gradient(135deg, #1ea7e1 0%, #ffd166 100%) !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 12px rgba(30, 167, 225, 0.3) !important;
+}
