@@ -236,3 +236,26 @@ button,
   transition: none !important;
   /* 移除所有动画过渡，让老婆/自己的头像静止如画 */
 }
+
+/* 1. 改变代码块内部代码的字体 */
+#article-container pre,
+#article-container code,
+.highlight figcaption,
+.highlight .code pre {
+  /* 优先使用流行且好看的系统等宽字体 */
+  font-family: 'Fira Code', 'JetBrains Mono', 'Cascadia Code', 'Segoe UI Mono', 'Courier New', Courier, monospace, "Microsoft YaHei" !important;
+  font-size: 14.5px !important;
+  /* 微调代码字体大小，14.5px 读起来最舒服 */
+  line-height: 1.6 !important;
+  /* 调整行高，让 Dart 的大括号和嵌套不那么拥挤 */
+  -webkit-font-smoothing: antialiased;
+  /* 让字体渲染更加平滑清晰 */
+}
+
+/* 2. 改变代码块左侧行号的字体（让它和右边代码完美对齐） */
+.highlight .gutter pre {
+  font-family: 'Fira Code', 'JetBrains Mono', monospace !important;
+  font-size: 14px !important;
+  opacity: 0.6;
+  /* 让行号稍微淡一点，不抢代码的风头 */
+}
