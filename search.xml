@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>C++智能指针</title>
+      <link href="/2026/07/01/C-%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88/"/>
+      <url>/2026/07/01/C-%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88/</url>
+      
+        <content type="html"><![CDATA[<p>现代C++可以使用智能指针（Smart Pointers）来自动管理动态对象的生命周期（“召之即来，挥之即去”），减少因手动<code>new/delete</code>导致的资源泄露风险。Java&#x2F;Kotlin层与C++交互时主要使用JNI，JNI导出的函数本质上是Java与Native层之间的桥梁，Native层不会自动维护C++对象生命周期，因此通常需要在C++层保存对象实例。此时需要一个全局的、内存常驻的智能指针来管理。</p><h3 id="1-出生（实例化）"><a href="#1-出生（实例化）" class="headerlink" title="1.出生（实例化）"></a>1.出生（实例化）</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义全局智能指针</span></span><br><span class="line"><span class="type">static</span> std::unique_ptr&lt;Live2DRenderer&gt; g_renderer;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 在方法里使用</span></span><br><span class="line"><span class="comment">// 如果之前有老的主角，先送他退场</span></span><br><span class="line"><span class="keyword">if</span> (g_renderer) &#123;</span><br><span class="line">    g_renderer-&gt;<span class="built_in">Destroy</span>();</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 实例化新主角！</span></span><br><span class="line">g_renderer = std::<span class="built_in">make_unique</span>&lt;Live2DRenderer&gt;();</span><br></pre></td></tr></table></figure><p>unique_ptr表示独占所有权（exclusive ownership），同一时间只能有一个指针拥有该对象。</p><h3 id="2-搬砖（执行中）"><a href="#2-搬砖（执行中）" class="headerlink" title="2.搬砖（执行中）"></a>2.搬砖（执行中）</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (!g_renderer) <span class="keyword">return</span>;</span><br><span class="line">g_renderer-&gt;<span class="built_in">PlayMotion</span>(...);</span><br></pre></td></tr></table></figure><h3 id="3-退场（析构）"><a href="#3-退场（析构）" class="headerlink" title="3.退场（析构）"></a>3.退场（析构）</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (g_renderer) &#123;</span><br><span class="line">    g_renderer-&gt;<span class="built_in">Destroy</span>(); <span class="comment">// 释放 OpenGL 和线程等资源</span></span><br><span class="line">    g_renderer.<span class="built_in">reset</span>();    <span class="comment">// 重置智能指针，自动销毁</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>析构函数体执行完毕后，C++运行时会自动按照声明顺序的<code>逆序</code>，逐个销毁类的成员变量。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> C++ </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> C++ </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Riverpod 使用笔记</title>
       <link href="/2026/06/08/Flutter-Riverpod-Notes/"/>
       <url>/2026/06/08/Flutter-Riverpod-Notes/</url>
