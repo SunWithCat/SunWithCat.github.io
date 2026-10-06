@@ -2,7 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://sunwithcat.github.io/2026/08/28/Summer-Pockets-%E4%B8%83%E5%BD%B1%E8%9D%B6%E8%AE%BE%E5%AE%9A%E8%80%83%E6%8D%AE/</loc>
+    <loc>https://sunwithcat.github.io/2026/10/06/%E4%BB%80%E4%B9%88%E6%98%AF-chroot%EF%BC%9A%E4%BB%8E%E6%89%8B%E6%9C%BA%E8%B7%91%E4%B8%8D%E4%BA%86Docker%E8%AF%B4%E8%B5%B7/</loc>
+    
+    <lastmod>2026-10-06</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://sunwithcat.github.io/2026/08/27/Summer-Pockets-%E4%B8%83%E5%BD%B1%E8%9D%B6%E8%AE%BE%E5%AE%9A%E8%80%83%E6%8D%AE/</loc>
     
     <lastmod>2026-08-27</lastmod>
     
@@ -85,7 +94,7 @@
 
   <url>
     <loc>https://sunwithcat.github.io/</loc>
-    <lastmod>2026-08-27</lastmod>
+    <lastmod>2026-10-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -93,63 +102,84 @@
   
   <url>
     <loc>https://sunwithcat.github.io/tags/C/</loc>
-    <lastmod>2026-08-27</lastmod>
+    <lastmod>2026-10-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://sunwithcat.github.io/tags/Flutter/</loc>
-    <lastmod>2026-08-27</lastmod>
+    <lastmod>2026-10-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://sunwithcat.github.io/tags/Riverpod/</loc>
-    <lastmod>2026-08-27</lastmod>
+    <lastmod>2026-10-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://sunwithcat.github.io/tags/GoRoute/</loc>
-    <lastmod>2026-08-27</lastmod>
+    <lastmod>2026-10-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://sunwithcat.github.io/tags/Kotlin/</loc>
-    <lastmod>2026-08-27</lastmod>
+    <lastmod>2026-10-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://sunwithcat.github.io/tags/Dart/</loc>
-    <lastmod>2026-08-27</lastmod>
+    <lastmod>2026-10-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://sunwithcat.github.io/tags/Summer-Pockets/</loc>
-    <lastmod>2026-08-27</lastmod>
+    <lastmod>2026-10-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://sunwithcat.github.io/tags/Galgame/</loc>
-    <lastmod>2026-08-27</lastmod>
+    <lastmod>2026-10-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://sunwithcat.github.io/tags/Key/</loc>
-    <lastmod>2026-08-27</lastmod>
+    <lastmod>2026-10-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://sunwithcat.github.io/tags/%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91/</loc>
+    <lastmod>2026-10-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://sunwithcat.github.io/tags/Linux/</loc>
+    <lastmod>2026-10-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://sunwithcat.github.io/tags/Docker/</loc>
+    <lastmod>2026-10-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -158,21 +188,28 @@
   
   <url>
     <loc>https://sunwithcat.github.io/categories/C/</loc>
-    <lastmod>2026-08-27</lastmod>
+    <lastmod>2026-10-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://sunwithcat.github.io/categories/Flutter/</loc>
-    <lastmod>2026-08-27</lastmod>
+    <lastmod>2026-10-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://sunwithcat.github.io/categories/ACG/</loc>
-    <lastmod>2026-08-27</lastmod>
+    <lastmod>2026-10-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://sunwithcat.github.io/categories/Linux/</loc>
+    <lastmod>2026-10-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
